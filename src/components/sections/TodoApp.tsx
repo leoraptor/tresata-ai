@@ -32,7 +32,7 @@ export default function TodoApp() {
     tasks
       .filter((t) => t.status === key)
       .filter((t) =>
-        [t.title, t.description].some((field) =>
+        [t.title, t.description, t.status].some((field) =>
           field.toLowerCase().includes(searchTerm.toLowerCase())
         )
       )
