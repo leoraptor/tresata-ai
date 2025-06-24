@@ -18,8 +18,14 @@ const page = () => {
   };
 
   const validationSchema = Yup.object({
-    title: Yup.string().trim().required("Title is required"),
-    description: Yup.string().trim().required("Description is required"),
+    title: Yup.string()
+      .trim()
+      .min(3, "Minimum 3 characters required")
+      .required("Title is required"),
+    description: Yup.string()
+      .trim()
+      .min(3, "Minimum 3 characters required")
+      .required("Description is required"),
   });
 
   const handleSubmit = (values: typeof initialValues, { resetForm }: any) => {
